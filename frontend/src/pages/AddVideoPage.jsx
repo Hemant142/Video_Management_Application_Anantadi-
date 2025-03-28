@@ -36,7 +36,7 @@ const AddVideoPage = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post('http://localhost:8080/videos/upload', formData, {
+      const res = await axios.post('https://video-management-application-anantadi-api.vercel.app/videos/upload', formData, {
         headers: { 
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`

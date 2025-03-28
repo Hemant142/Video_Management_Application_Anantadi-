@@ -11,7 +11,7 @@ const SignupPage = () => {
 
   const handleSignup = async () => {
     try {
-      await axios.post('http://localhost:8080/users/register', { username, email, password });
+      await axios.post('https://video-management-application-anantadi-api.vercel.app/users/register', { username, email, password });
       alert('Registered successfully! Please login.');
       navigate('/');
     } catch (err) {

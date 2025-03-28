@@ -14,7 +14,7 @@ const DashboardPage = () => {
     const fetchVideos = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:8080/videos/my-videos', {
+        const response = await axios.get('https://video-management-application-anantadi-api.vercel.app/videos/my-videos', {
           headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -53,7 +53,12 @@ const DashboardPage = () => {
     <Box>
       <Navbar />
       <Box maxW="1200px" mx="auto" mt="10" p="4">
-        {videos.length > 0 ?        <Heading mb="4" textAlign="center">Your Uploaded Videos</Heading>:""}
+        {videos.length > 0 ?     <Box>
+          <Heading mb="4" textAlign="center">Your Uploaded Videos</Heading>
+          <Button colorScheme="blue" onClick={() => navigate('/add-video')}>
+              Upload Video
+            </Button>
+        </Box>   :""}
 
        
         {loading ? (

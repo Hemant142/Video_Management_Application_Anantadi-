@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:8080/users/login', { email, password });
+      const res = await axios.post('https://video-management-application-anantadi-api.vercel.app/users/login', { email, password });
       console.log(res, "response");
       localStorage.setItem('user', res.data.user.username);
       localStorage.setItem('token', res.data.token);

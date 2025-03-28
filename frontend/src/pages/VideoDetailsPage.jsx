@@ -25,7 +25,7 @@ const VideoDetailsPage = () => {
     const fetchVideoDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://localhost:8080/videos/${id}`, {
+        const response = await axios.get(`https://video-management-application-anantadi-api.vercel.app/videos/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
